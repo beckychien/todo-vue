@@ -29,11 +29,17 @@
 			},
 			addData:function(){
 				this.items.push(
-				{
-					text:this.newTodo,
-					isFinished:false	
-				},
+					{
+						text:this.newTodo,
+						isFinished:false	
+					},
 				);
+
+				//講輸入框中的值傳給父組件app.vue
+				//觸發myMsg這個事件,並傳遞參數
+				this.$emit('myMsg',this.newTodo);
+				
+				//清空輸入框
 				this.newTodo="";
 			}
 		}
